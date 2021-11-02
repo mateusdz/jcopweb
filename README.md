@@ -16,7 +16,7 @@ jekyll -v
 - Clone the JCOP Website repo [https://eu-jcop.github.io/jcopweb/](https://eu-jcop.github.io/jcopweb/) to your computer.
 
 ```bash
-cd mateusdz.github.io
+cd jcopweb
 
 jekyll serve
 ```
