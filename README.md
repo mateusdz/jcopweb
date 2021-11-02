@@ -20,7 +20,7 @@ cd mateusdz.github.io
 
 jekyll serve
 ```
-- Running ```jekyll serve``` creates a folder called ```_site``` under the folder ```mateusdz.github.io```. Jekyll uses this folder content to serve the website locally. The folder ```_site``` should not be checked into the repository.
+- Running ```jekyll serve``` creates a folder called ```_site``` under the folder ```jcopweb```. Jekyll uses this folder content to serve the website locally. The folder ```_site``` should not be checked into the repository.
 
 - Browse the website by going to this URL. Make sure to stop the server and run again each time a change is made to the ```_config.yml``` file.
 
