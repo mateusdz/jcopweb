@@ -1,0 +1,174 @@
+---
+layout: default
+title: JCOP
+permalink: /
+---
+
+<!-- ======= Carousel Section ======= -->
+<section id="hero">
+  <div class="hero-container">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              {% include_relative content/homepage/carousel/slide1.html %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              {% include_relative content/homepage/carousel/slide2.html %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              {% include_relative content/homepage/carousel/slide3.html %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+  </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Joint Cybersecurity Operations Platform (JCOP)</h2>
+        <p class="section-subtitle"><em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corporis hic reprehenderit.</em></p>
+      </div>
+      <div class="row" data-aos="fade-up">
+        <div class="col-md-5">
+          <img src="assets/img/placeholder.png" class="img-fluid" alt="Figure">
+        </div>
+        <!-- ======= Paragraph 1 ======= -->
+        <div class="col-md-6 pt-4">
+          <h3>Vision</h3>
+          <p>{% capture p1 %}{% include_relative content/homepage/paragraph1.md %}{% endcapture %}{{ p1 | markdownify }}</p>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up">
+        <div class="col-md-6 order-1 order-md-2">
+          <img src="assets/img/placeholder.png" class="img-fluid" alt="Figure">
+        </div>
+        <!-- ======= Paragraph 2 ======= -->
+        <div class="col-md-6 pt-3 order-2 order-md-1">
+          <h3>Lorem ipsum dolor sit amet consectetur</h3>
+          <p>
+            {% capture p2 %}{% include_relative content/homepage/paragraph2.md %}{% endcapture %}{{ p2 | markdownify }}
+          </p>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up">
+        <div class="col-md-6">
+          <img src="assets/img/placeholder.png" class="img-fluid" alt="Figure">
+        </div>
+        <!-- ======= Paragraph 3 ======= -->
+        <div class="col-md-6 pt-3">
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+          <p>
+            {% capture p3 %}{% include_relative content/homepage/paragraph3.md %}{% endcapture %}{{ p3 | markdownify }}
+          </p>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up">
+        <div class="col-md-6 order-1 order-md-2">
+          <img src="assets/img/placeholder.png" class="img-fluid" alt="Figure">
+        </div>
+        <!-- ======= Paragraph 4 ======= -->
+        <div class="col-md-6 pt-3 order-2 order-md-1">
+          <h3>Lorem ipsum dolor sit amet</h3>
+          <p>
+            {% capture p4 %}{% include_relative content/homepage/paragraph4.md %}{% endcapture %}{{ p4 | markdownify }}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </section><!-- End Features Section -->
+
+  <!-- ======= Frequently Asked Questions Section ======= -->
+  <section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <ul>
+          <li data-aos="fade-up">
+            <em class="bx bx-help-circle icon-help"></em> <a data-toggle="collapse" class="collapse"
+              href="#faq-list-1">What is JCOP? <em class="bx bx-chevron-down icon-show"></em><em
+                class="bx bx-chevron-up icon-close"></em></a>
+            <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+              <p>
+                JCOP - Joint Cybersecurity Operations Platform
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up">
+            <em class="bx bx-help-circle icon-help"></em> <a data-toggle="collapse" href="#faq-list-2"
+              class="collapsed">JCOP Partners?<em
+                class="bx bx-chevron-down icon-show"></em><em class="bx bx-chevron-up icon-close"></em></a>
+            <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+                - Technical University of Crete (Coordinator), Greece<br>
+                - Hellenic Ministry of Digital Governance - National Cyber ​​Security Authority,Greece<br>
+                - Sphynx Analytics Ltd (SANL), Cyprus<br>
+                - Digital Security Authority of Cyprus (DSA), Cyprus<br>
+                - Technische Universität Braunschweig, Germany<br>
+                - University of Oslo (UiO) - Department of Informatics, Norway<br>
+                - Norwegian National Security Authority (NSM), Norway<br>
+            </div>
+          </li>
+          
+          <li data-aos="fade-up">
+            <em class="bx bx-help-circle icon-help"></em> <a data-toggle="collapse" href="#faq-list-3"
+              class="collapsed">Financing<em
+                class="bx bx-chevron-down icon-show"></em><em class="bx bx-chevron-up icon-close"></em></a>
+            <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+              European Health and Digital Executive Agency under the Connecting Europe Facility (CEF) - Telecommunications Sector              
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- <div class="centerText">
+        <a rel="noopener noreferrer" href="{{ site.baseurl }}/faq.html"
+          class="btn-green animate__animated animate__fadeInUp scrollto">View More</a>
+      </div> -->
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
+
+</main><!-- End #main -->
