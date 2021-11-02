@@ -2,7 +2,7 @@
 
 This website was created using [Jekyll](https://jekyllrb.com/) and hosted using GitHub Pages.
 
-The source can be found at [https://github.com/eu-jcop/eu-jcop.github.io](https://github.com/eu-jcop/eu-jcop.github.io).
+The source can be found at [https://eu-jcop.github.io/jcopweb/](https://eu-jcop.github.io/jcopweb/).
 
 Additions/corrections/suggestions are welcome.
 
@@ -13,7 +13,7 @@ Additions/corrections/suggestions are welcome.
 ```
 jekyll -v
 ```
-- Clone the JCOP Website repo [https://github.com/eu-jcop/eu-jcop.github.io](https://github.com/eu-jcop/eu-jcop.github.io) to your computer.
+- Clone the JCOP Website repo [https://eu-jcop.github.io/jcopweb/](https://eu-jcop.github.io/jcopweb/) to your computer.
 
 ```bash
 cd mateusdz.github.io
