@@ -73,7 +73,7 @@ http://127.0.0.1:4000/index.html
 -- faq.html                          # Frequently asked Questions (hidden, but the content exitst also in the index.html file in the bottom.)
 -- favicon.ico
 -- index.html                        # HomePage of this website.
--- partners.html                     # JCOP partners.
+-- consortium.html                     # JCOP Consortium.
 -- project.html                      # Information about JCOP project.
 -- timeline.html                     # JCOP timeline.
 -- README.md                         # Documentation on how to use/contribute to this website.
