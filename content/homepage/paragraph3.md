@@ -1,3 +1,1 @@
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, veniam, repellat voluptatem ullam, facilis tempora nobis dicta blanditiis expedita iure neque? Sequi itaque eligendi cupiditate eaque corporis ducimus. Quo, aperiam.
-
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, veniam, repellat voluptatem ullam, facilis tempora nobis dicta blanditiis expedita iure neque? Sequi itaque eligendi cupiditate eaque corporis ducimus. Quo, aperiam.
+A Cybersecurity Operations Training (COT) subsystem supporting advanced Cyber Range -based training programmes, tabletop cyber exercises and MOOC-based training, allowing the delivery of trainings and exercises covering incident response, threat intelligence analysis, threat and incident information sharing, collaboration and response coordination, while continuously being refined with feedback received from (i) and (ii) above.

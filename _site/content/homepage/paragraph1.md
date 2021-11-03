@@ -1,3 +1,1 @@
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, veniam, repellat voluptatem ullam, facilis tempora nobis dicta blanditiis expedita iure neque? Sequi itaque eligendi cupiditate eaque corporis ducimus. Quo, aperiam.
-
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, veniam, repellat voluptatem ullam, facilis tempora nobis dicta blanditiis expedita iure neque? Sequi itaque eligendi cupiditate eaque corporis ducimus. Quo, aperiam.
+A Cyber Threat Intelligence (CTI) subsystem encompassing tactical, operational and strategic CTI elements, providing enhanced operational awareness, early warning on attacks, and awareness of changes in threat landscape;

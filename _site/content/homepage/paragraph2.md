@@ -1,3 +1,1 @@
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, veniam, repellat voluptatem ullam, facilis tempora nobis dicta blanditiis expedita iure neque? Sequi itaque eligendi cupiditate eaque corporis ducimus. Quo, aperiam.
-
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, veniam, repellat voluptatem ullam, facilis tempora nobis dicta blanditiis expedita iure neque? Sequi itaque eligendi cupiditate eaque corporis ducimus. Quo, aperiam.
+An Alerting & Incident Response (AIR) subsystem for CSIRT/SOC teams aligned with the ENISA/FIRST.org frameworks for EU-established best practices on incident response, while also enabling the prompt alerting, effective remote collaboration and the development of fast response procedures through the enhancement of CSIRTs cooperation and the participation in the Cyber Crisis Liaison Organisation Network (CyCLONe) network.
