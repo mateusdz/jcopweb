@@ -1,1 +1,1 @@
-A Cyber Threat Intelligence (CTI) subsystem encompassing tactical, operational and strategic CTI elements, providing enhanced operational awareness, early warning on attacks, and awareness of changes in threat landscape;
+A Cyber Threat Intelligence (CTI) subsystem that increases the Union’s threat situational awareness and information exchange capabilities in support of the required technical and operational capacities as described in Blueprint.

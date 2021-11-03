@@ -179,4 +179,8 @@
     aos_init();
   });
 
+  $('.carousel').carousel({
+    interval: 15000
+  })
+
 })(jQuery);
