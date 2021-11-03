@@ -4,6 +4,8 @@
 body {
   font-family: arial, sans-serif;
   color: #444;
+  position: relative;
+  min-height: 85vh;
 }
 
 a {
@@ -18,6 +20,19 @@ a:hover {
 h1, h2, h3, h4, h5, h6, .font-primary {
   font-family: arial, sans-serif;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  padding-top: 1.5em;
+}
+
+footer > section {
+  padding-bottom:20px;
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button
