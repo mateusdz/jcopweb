@@ -32,6 +32,7 @@ footer {
 footer > section {
   padding-bottom:20px;
 }
+
 /* --------------------------- 
 #  Flex 
 --------------------------  */ 
@@ -56,6 +57,7 @@ footer > section {
 .nav-menu-icon-linkedin {
   padding: 7px 7px 0px 7px !important;
 }
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -939,7 +941,6 @@ section {
   border-radius: 6px;
   background: #f3f5f7;
   transition: ease-in-out 0.3s;
-  /* height: 110px; */
 }
 
 .contacts .icon-box i {
@@ -949,7 +950,7 @@ section {
 }
 
 .contacts .icon-box h4 {
-  /* margin-left: 70px; */
+  margin-left: 70px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 14px;
