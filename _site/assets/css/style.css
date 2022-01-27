@@ -32,7 +32,26 @@ footer {
 footer > section {
   padding-bottom:20px;
 }
+/* --------------------------- 
+#  Flex 
+--------------------------  */ 
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.remove-padding {
+  padding: 0px;
+}
+
+.padding-sides-5 {
+  padding: 0px 5px 0px 5px;
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -916,6 +935,7 @@ section {
   border-radius: 6px;
   background: #f3f5f7;
   transition: ease-in-out 0.3s;
+  /* height: 110px; */
 }
 
 .contacts .icon-box i {
@@ -925,7 +945,7 @@ section {
 }
 
 .contacts .icon-box h4 {
-  margin-left: 70px;
+  /* margin-left: 70px; */
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 14px;
