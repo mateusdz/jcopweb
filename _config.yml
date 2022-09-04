@@ -13,8 +13,8 @@ keep_files:
 # Site settings
 title: JCOP
 subtitle: "JCOP"
-url: "https://mateusdz.github.io/jcopweb/" # the base hostname & protocol for your site
-baseurl: "https://mateusdz.github.io/jcopweb/"
+url: "https://mateusdz.github.io/jcopweb" # the base hostname & protocol for your site
+baseurl: "https://mateusdz.github.io/jcopweb"
 logo: "/assets/img/logo.png"
 
 # Build settings
