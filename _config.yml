@@ -13,7 +13,7 @@ keep_files:
 # Site settings
 title: JCOP
 subtitle: "JCOP"
-url: "" # the base hostname & protocol for your site
+url: "jcopweb/" # the base hostname & protocol for your site
 baseurl: ""
 logo: "/assets/img/logo.png"
 
