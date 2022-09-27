@@ -157,20 +157,22 @@ permalink: /blogposts/blog2.html
           United States. The results indicate three activity groups to be of
           relevance.
         </p>
-        <table>
-          <tr>
-            <td style="border: 1px solid black; color: darkgray">
-              <code>
-                SELECT * FROM GroupsKnowledgeBase <br/>
-                WHERE OriginatesFrom == “Russian Federation” <br/>
-                AND TargetSector == “Government” <br/>
-                AND TargetCountry == “United States” <br/>
-                <br/>
-                Results: APT28, APT29, Dragonfly 2.0
-              </code>
-            </td>
-          </tr>
-        </table>
+        <div style="text-align: center; width: 80%; margin-left:auto; margin-right: auto;">
+          <table>
+            <tr>
+              <td style="border: 1px solid black;"> 
+                <code style="color: darkgray">
+                  SELECT * FROM GroupsKnowledgeBase <br/>
+                  WHERE OriginatesFrom == “Russian Federation” <br/>
+                  AND TargetSector == “Government” <br/>
+                  AND TargetCountry == “United States” <br/>
+                  <br/>
+                  Results: APT28, APT29, Dragonfly 2.0
+                </code>
+              </td>
+            </tr>
+          </table>
+        </div>
         <p>
           <b>Listing 1:</b> SQL query leveraging our model's contextual information types to retrieve activity groups of interest.
         </p>
