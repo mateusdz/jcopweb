@@ -1,0 +1,224 @@
+---
+layout: page
+title: Blog Post
+pageHeading: Utilizing the Enhanced STIX Representation of MITRE ATT&CK as Cyber Threat Intelligence Source for Group Filtering and Technique Prioritization
+permalink: /blogposts/blog2.html
+---
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ page.pageHeading }} </h2>
+        <code>Author: UiO</code> <br />
+      </div>
+      <div class="col-sm-12">
+        <h3>Introduction</h3>
+        <p>
+          The exponential increase in cyberattacks and sophisticated attack
+          behavior push organizations to continuously invest in strengthening
+          their cybersecurity posture (Brown & Lee 2021)<sup>1</sup>. Defenders
+          to better respond to the current cyber threat landscape, improve their
+          threat situational awareness, and stay resilient against cybersecurity
+          threats have recognized the need to generate and utilize cyber threat
+          intelligence and collaborate through information exchange to use
+          others' experiences as their own organization's defense (Johnson et
+          al. 2016)<sup>2</sup>.
+        </p>
+        <p>
+          There is a common understanding that for detection purposes, the value
+          of atomic indicators like hash values, IP addresses, domain names, and
+          host and network artifacts can vary due to their possible short
+          lifespan and their vast amount that often leads to indicator and alert
+          fatigue. David Bianco depicts that through a “pyramid of pain” (Bianco
+          2014)<sup>3</sup>. Bianco's pyramid of pain is shown in Figure 1 and
+          represents the pain an adversary will suffer when a defender has
+          denied the adversary the use of those indicators. At the apex of the
+          pyramid of pain are Tactics, Techniques, and Procedures (TTPs) as a
+          single grouping. When defenders detect and respond at the TTP level,
+          they operate directly on adversary behavior. Detection at the TTP
+          level can identify malicious activity that may not rely on prior
+          knowledge of adversary tools and atomic indicators and can have a
+          lasting impact on the attackers as they would have to change nearly
+          every aspect of how they operate to avoid detection (Lee & Brown
+          2021)<sup>4</sup>.
+        </p>
+        <img
+          src="{{ site.baseurl }}/assets/img/Pyramid_of_Pain.png"
+          alt="Bianco's Pyramide of Pain."
+          class="responsive-img"
+        />
+        <p><b>Figure 1:</b> The Pyramid of Pain (Bianco 2014)<sup>3</sup>.</p>
+        <h3>MITRE ATT&CK and ATT&CK Groups</h3>
+        <p>
+          ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) is a
+          globally-accessible effort that curates knowledge concerning adversary
+          behavior, led by MITRE and supported by the broader cybersecurity
+          community via contributions. ATT&CK focuses on how adversaries
+          compromise and operate within computer information networks. MITRE
+          maintains a knowledge base of activity groups (referred to as Groups)
+          and their technique use. Groups<sup>5</sup> are sets of related
+          intrusion activity that are tracked by a common name in the security
+          community and are aimed to collect ATT&CK techniques and software that
+          have been reported to use. Of particular importance is the Group's
+          “description” property that, in many cases, carries information about
+          a group's motivation, the country it originates from, as well as
+          sectors and countries that have been targeted.
+        </p>
+        <h4>MITRE's STIX 2.1 Representation of ATT&CK Groups</h4>
+        <p>
+          The STIX standard developed by the OASIS Cyber Threat Intelligence
+          Technical Committee is a common language and serialization format used
+          to represent and exchange cyber threat intelligence (Jordan, Piazza &
+          Darley 2021)<sup>6</sup>. For programmatic utilization, MITRE provides access to
+          the ATT&CK knowledge base through STIX interfaces on their
+          GitHub<sup>7</sup>. In our work, we have processed and manipulated
+          version 9<sup>8</sup> of the knowledge base in STIX 2.1.
+        </p>
+        <p>
+          Figure 2 illustrates the set of STIX 2.1 object and relationship types
+          leveraged to define groups that altogether comprise the ATT&CK Groups
+          knowledge base. An “intrusion set” object (activity group or Group)
+          connects with “attack pattern” objects (techniques/sub-techniques),
+          “malware” objects (software), and “tool” objects (software).
+        </p>
+        <img
+          src="{{ site.baseurl }}/assets/img/Activity_Group-basis.jpg"
+          alt="High-level STIX 2.1 representation of the Groups knowledge base."
+          class="responsive-img"
+        />
+        <p>
+          <b>Figure 2:</b> High-level STIX 2.1 representation of the Groups
+          knowledge base.
+        </p>
+        <h3>
+          A Proposed Enhanced STIX 2.1 Representation for the ATT&CK Groups
+          Knowledge Base
+        </h3>
+        <p>
+          We introduce additional types of contextual information that enable us
+          to construct more intelligible queries and exploit the knowledge base
+          in a more granular manner. Our proposed enhancements rely on
+          information already part of the knowledge base but represented in a
+          semi-structured form. In particular, information from the descriptions
+          of activity groups, which in many cases, identify group motivations,
+          the countries they originate from, as well as sectors and countries
+          they have targeted. We extract the identified information and
+          represent it in a fully structured manner using a set of distinct STIX
+          2.1 objects. In particular, the “location” object type is utilized to
+          represent the suspected or confirmed country of origin of an activity
+          group as well as targeted countries and regions. The “identity” object
+          type is used to represent targeted sectors. Moreover, when feasible,
+          the STIX 2.1 “intrusion set” objects are enriched with primary and
+          secondary motivations (using the available primary and secondary
+          motivations properties of the intrusion set object type). Figure 3
+          depicts the enhanced STIX 2.1 representation of the Groups knowledge
+          base (version 9). We have made the entire enhanced Groups knowledge
+          base available on GitHub<sup>9</sup>.
+        </p>
+        <img
+          src="{{ site.baseurl }}/assets/img/Enhancing_ATTCK_Groups.jpg"
+          alt="Enhanced STIX 2.1 representation of the ATT&CK Groups knowledge base."
+          class="responsive-img"
+        />
+        <p>
+          <b>Figure 3:</b> Enhanced STIX 2.1 representation of the ATT&CK Groups knowledge base.
+        </p>
+        <h3>
+          Utilizing the Enhanced STIX 2.1 Groups Knowledge Base for Group
+          Filtering and Technique Prioritization
+        </h3>
+        <p>
+          This section demonstrates how to use the new types of contextual
+          information introduced in the enhanced STIX 2.1 representation of the
+          Groups knowledge base to filter activity groups of interest.
+        </p>
+        <p>
+          It is out of the scope of our work to suggest specific data query- or
+          programming languages to interact with the knowledge base. However,
+          any programming language that can interact with JSON (JavaScript
+          Object Notation) should be sufficient. It is also important to remark
+          that the accuracy of the results retrieved might be questionable due
+          to the use of non-standardized vocabularies in providing context that
+          often leads to semantic ambiguity. For example, the number of sectors
+          and sectors considered critical infrastructure might be dissimilar in
+          different countries.
+        </p>
+        <p>
+          Listing 1 presents an SQL-based query that aims to retrieve activity
+          clusters that are believed to originate from the Russian Federation
+          and have targeted establishments within the Government sector in the
+          United States. The results indicate three activity groups to be of
+          relevance.
+        </p>
+        <table>
+          <tr>
+            <td>
+              <code>
+                SELECT * FROM GroupsKnowledgeBase <br/>
+                WHERE OriginatesFrom == “Russian Federation” <br/>
+                AND TargetSector == “Government” <br/>
+                AND TargetCountry == “United States” <br/>
+                <br/>
+                Results: APT28, APT29, Dragonfly 2.0
+              </code>
+            </td>
+          </tr>
+        </table>
+        <p>
+          <b>Listing 1:</b> SQL query leveraging our model's contextual information types to retrieve activity groups of interest.
+        </p>
+        <p>
+          Awareness of the techniques and their frequency among relevant activity groups allows organizations to support decision-making to protect their assets. From that point, defenders can leverage the associated information for their use cases, such as prioritizing adversary techniques to conduct defense gap- or SOC (security operations center) maturity assessments. We retrieve the ATT&CK technique use of the groups and provide it as input to MITRE's ATT&CK Navigator<sub>10</sub> to identify and explore any commonalities. The technique overlap is presented in Figure 5. The light red color techniques do not overlap among the three groups. The red color techniques indicate use by two groups, and the dark red color techniques indicate use by all three groups. 
+        </p>
+        <img
+          src="{{ site.baseurl }}/assets/img/Heatmap-APT28_APT29_Dragonfly2.0.jpg"
+          alt="Heatmap showing commonalities in technique use among APT28, APT29, and Dragonfly 2.0."
+          class="responsive-img"
+        />
+        <p>
+          <b>Figure 5:</b> Heatmap showing commonalities in technique use among APT28, APT29, and Dragonfly 2.0.
+        </p>
+        <p>
+          You can read the full paper in the following url: 
+          <a href="https://papers.academic-conferences.org/index.php/eccws/article/view/349/381">https://papers.academic-conferences.org/index.php/eccws/article/view/349/381</a><br/>
+          For technical details please visit our GitHub repo for this project: 
+          <a href="https://github.com/fovea-research/SAG">https://github.com/fovea-research/SAG</a>
+        </p>
+        <b>Resources</b>
+        <ol>
+          <li>
+            Brown, R. and Lee, R.M., (2021). 2021 SANS Cyber Threat Intelligence (CTI) Survey. In Tech. Rep. SANS Institute.
+          </li>
+          <li>
+            Johnson, C., Badger, L., Waltermire, D., Snyder, J. and Skorupka, C., (2016). Guide to Cyber Threat Information Sharing. NIST special publication, 800(150).
+          </li>
+          <li>
+            Bianco, D., (2019). The Pyramid of Pain (2014). Available at: http://detect-respond.blogspot.nl/2013/03/the-pyramid-of-pain.html. 
+          </li>
+          <li>
+            Lee, R.M., and Brown, R., (2021). FOR578 Cyber Threat Intelligence: 578.1 Cyber Threat Intelligence and Requirements. SANS.
+          </li>
+          <li>
+            <a href="https://attack.mitre.org/groups/">https://attack.mitre.org/groups/</a>
+          </li>
+          <li>
+            Jordan, B., Piazza, R., and Darley T., (2021), July, STIX™ Standard, version2.1  ed., [Online]  https://docs.oasis-open.org/cti/stix/v2.1/stix-v2.1.html, OASIS Cyber Threat Intelligence Technical  Committee.
+          </li>
+          <li>
+            <a href="https://github.com/mitre-attack/attack-stix-data">https://github.com/mitre-attack/attack-stix-data</a> 
+          </li>
+          <li>
+            <a href="https://github.com/mitre/cti/tree/eb1b9385d44340ce867a77358c5f5aaed666e54c/enterprise-attack/intrusion-set">https://github.com/mitre/cti/tree/eb1b9385d44340ce867a77358c5f5aaed666e54c/enterprise-attack/intrusion-set</a>
+          </li>
+          <li>
+            <a href="https://github.com/fovea-research/SAG">https://github.com/fovea-research/SAG</a>
+          </li>
+          <li>
+            <a href=" https://mitre-attack.github.io/attack-navigator/"> https://mitre-attack.github.io/attack-navigator/</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
