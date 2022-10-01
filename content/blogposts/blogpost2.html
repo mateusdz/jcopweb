@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog Post
-pageHeading: Utilizing the Enhanced STIX Representation of MITRE ATT&CK as Cyber Threat Intelligence Source for Group Filtering and Technique Prioritization
+pageHeading: Utilizing an Enhanced STIX Representation of MITRE ATT&CK as Cyber Threat Intelligence Source for Group Filtering and Technique Prioritization
 permalink: /blogposts/blog2.html
 ---
 
@@ -74,8 +74,7 @@ permalink: /blogposts/blog2.html
           to represent and exchange cyber threat intelligence (Jordan, Piazza &
           Darley 2021)<sup>6</sup>. For programmatic utilization, MITRE provides access to
           the ATT&CK knowledge base through STIX interfaces on their
-          GitHub<sup>7</sup>. In our work, we have processed and manipulated
-          version 9<sup>8</sup> of the knowledge base in STIX 2.1.
+          GitHub<sup>7</sup>.
         </p>
         <p>
           Figure 2 illustrates the set of STIX 2.1 object and relationship types
@@ -118,7 +117,7 @@ permalink: /blogposts/blog2.html
           motivations properties of the intrusion set object type). Figure 3
           depicts the enhanced STIX 2.1 representation of the Groups knowledge
           base (version 9). We have made the entire enhanced Groups knowledge
-          base available on GitHub<sup>9</sup>.
+          base available on GitHub<sup>8</sup>.
         </p>
         <div style="width: 80%; margin-left:auto; margin-right: auto;">
           <img
@@ -177,7 +176,7 @@ permalink: /blogposts/blog2.html
           <b>Listing 1:</b> SQL query leveraging our model's contextual information types to retrieve activity groups of interest.
         </p>
         <p>
-          Awareness of the techniques and their frequency among relevant activity groups allows organizations to support decision-making to protect their assets. From that point, defenders can leverage the associated information for their use cases, such as prioritizing adversary techniques to conduct defense gap- or SOC (security operations center) maturity assessments. We retrieve the ATT&CK technique use of the groups and provide it as input to MITRE's ATT&CK Navigator<sub>10</sub> to identify and explore any commonalities. The technique overlap is presented in Figure 5. The light red color techniques do not overlap among the three groups. The red color techniques indicate use by two groups, and the dark red color techniques indicate use by all three groups. 
+          Awareness of the techniques and their frequency among relevant activity groups allows organizations to support decision-making to protect their assets. From that point, defenders can leverage the associated information for their use cases, such as prioritizing adversary techniques to conduct defense gap- or SOC (security operations center) maturity assessments. We retrieve the ATT&CK technique use of the groups and provide it as input to MITRE's ATT&CK Navigator<sub>9</sub> to identify and explore any commonalities. The technique overlap is presented in Figure 5. The light red color techniques do not overlap among the three groups. The red color techniques indicate use by two groups, and the dark red color techniques indicate use by all three groups. 
         </p>
         <img
           src="{{ site.baseurl }}/assets/img/Heatmap-APT28_APT29_Dragonfly2.0.jpg"
@@ -199,7 +198,7 @@ permalink: /blogposts/blog2.html
             Brown, R. and Lee, R.M., (2021). 2021 SANS Cyber Threat Intelligence (CTI) Survey. In Tech. Rep. SANS Institute.
           </li>
           <li>
-            Johnson, C., Badger, L., Waltermire, D., Snyder, J. and Skorupka, C., (2016). Guide to Cyber Threat Information Sharing. NIST special publication, 800(150).
+            Johnson, C., Badger, L., Waltermire, D., Snyder, J. and Skorupka, C., (2016). Guide to Cyber Threat Information Sharing. NIST special publi   cation, 800(150).
           </li>
           <li>
             Bianco, D., (2019). The Pyramid of Pain (2014). Available at: http://detect-respond.blogspot.nl/2013/03/the-pyramid-of-pain.html. 
@@ -215,9 +214,6 @@ permalink: /blogposts/blog2.html
           </li>
           <li>
             <a href="https://github.com/mitre-attack/attack-stix-data">https://github.com/mitre-attack/attack-stix-data</a> 
-          </li>
-          <li>
-            <a href="https://github.com/mitre/cti/tree/eb1b9385d44340ce867a77358c5f5aaed666e54c/enterprise-attack/intrusion-set">https://github.com/mitre/cti/tree/eb1b9385d44340ce867a77358c5f5aaed666e54c/enterprise-attack/intrusion-set</a>
           </li>
           <li>
             <a href="https://github.com/fovea-research/SAG">https://github.com/fovea-research/SAG</a>
