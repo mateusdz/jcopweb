@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog Post
-pageHeading: How the European project JCOP adds actual value to Cybersecurity Authorities
+pageHeading: Utilizing an Enhanced STIX Representation of MITRE ATT&CK as Cyber Threat Intelligence Source for Group Filtering and Technique Prioritization
 permalink: /blogposts/blog3.html
 ---
 
@@ -9,251 +9,217 @@ permalink: /blogposts/blog3.html
   <section>
     <div class="container">
       <div class="section-title">
-        <h2>{{ page.pageHeading }}</h2>
-        <code>Author: NCSA</code> <br />
+        <h2>{{ page.pageHeading }} </h2>
+        <code>Author: UiO</code> <br />
       </div>
       <div class="col-sm-12">
         <h3>Introduction</h3>
         <p>
-          <b>
-            The (Hellenic) National Cyber Security Authority (NCSA, hereafter
-            the Authority) is the national competent authority for cybersecurity
-            in Greece, according to the NIS Directive and national Law
-            4577/2018.
-          </b>
-          The NCSA, which operates under the Ministry of Digital Governance,
-          functions as a General Directorate covering the areas of cybersecurity
-          strategic planning, prevention and protection, business continuity and
-          coordination. The NCSA is recruited with public sector officials,
-          including cybersecurity experts, IT engineers, legal experts and
-          public management officials. NCSA has established strong
-          collaborations with the Governmental CERT, the National CSIRT, as well
-          as other competent authorities. Furthermore, the Authority
-          collaborates with EU agencies, other authorities and organisations,
-          such as the NIS Cooperation Group, ENISA and the EU CERT Network, and
-          participates in the relevant discussions and works. Finally, the NCSA
-          also is engaged in international collaborations and Europeanfunded
-          projects, like JCOP.
+          The exponential increase in cyberattacks and sophisticated attack
+          behavior push organizations to continuously invest in strengthening
+          their cybersecurity posture (Brown & Lee 2021)<sup>1</sup>. Defenders
+          to better respond to the current cyber threat landscape, improve their
+          threat situational awareness, and stay resilient against cybersecurity
+          threats have recognized the need to generate and utilize cyber threat
+          intelligence and collaborate through information exchange to use
+          others' experiences as their own organization's defense (Johnson et
+          al. 2016)<sup>2</sup>.
         </p>
-        <p>The Authority's high-level mission is described as follows:</p>
-        <ul>
-          <li>Supervision of national cybersecurity policy.</li>
-          <li>
-            Supporting national efforts in incident handling & threat response.
-          </li>
-          <li>Coordination of national cybersecurity stakeholders.</li>
-          <li>Cooperation with national and international actors.</li>
-          <li>Promotion of a cyber-secure culture in Greece.</li>
-        </ul>
-        <div style="width: 50%; margin-left: auto; margin-right: auto">
+        <p>
+          There is a common understanding that for detection purposes, the value
+          of atomic indicators like hash values, IP addresses, domain names, and
+          host and network artifacts can vary due to their possible short
+          lifespan and their vast amount that often leads to indicator and alert
+          fatigue. David Bianco depicts that through a “pyramid of pain” (Bianco
+          2014)<sup>3</sup>. Bianco's pyramid of pain is shown in Figure 1 and
+          represents the pain an adversary will suffer when a defender has
+          denied the adversary the use of those indicators. At the apex of the
+          pyramid of pain are Tactics, Techniques, and Procedures (TTPs) as a
+          single grouping. When defenders detect and respond at the TTP level,
+          they operate directly on adversary behavior. Detection at the TTP
+          level can identify malicious activity that may not rely on prior
+          knowledge of adversary tools and atomic indicators and can have a
+          lasting impact on the attackers as they would have to change nearly
+          every aspect of how they operate to avoid detection (Lee & Brown
+          2021)<sup>4</sup>.
+        </p>
+        <div style="width: 60%; margin-left:auto; margin-right: auto;">
           <img
-            src="{{ site.baseurl }}/assets/img/ncsa_strategic_objectives.png"
-            alt="National Cybersecurity Strategic Objectives"
+            src="{{ site.baseurl }}/assets/img/Pyramid_of_Pain.png"
+            alt="Bianco's Pyramide of Pain."
             class="responsive-img"
           />
         </div>
-        <p><b>Figure 1:</b> National Cybersecurity Strategic Objectives</p>
-        <div style="clear: both"></div>
+        <p><b>Figure 1:</b> The Pyramid of Pain (Bianco 2014)<sup>3</sup>.</p>
+        <h3>MITRE ATT&CK and ATT&CK Groups</h3>
         <p>
-          JCOP is a European project driven by EU's Cybersecurity's strategy and
-          guidelines, which aspires to facilitate shared situational awareness,
-          preparedness and coordinated incident response with the cybersecurity
-          structures and mechanisms established under the Directive on security
-          of network and information systems (NIS Directive).
+          ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) is a
+          globally-accessible effort that curates knowledge concerning adversary
+          behavior, led by MITRE and supported by the broader cybersecurity
+          community via contributions. ATT&CK focuses on how adversaries
+          compromise and operate within computer information networks. MITRE
+          maintains a knowledge base of activity groups (referred to as Groups)
+          and their technique use. Groups<sup>5</sup> are sets of related
+          intrusion activity that are tracked by a common name in the security
+          community and are aimed to collect ATT&CK techniques and software that
+          have been reported to use. Of particular importance is the Group's
+          “description” property that, in many cases, carries information about
+          a group's motivation, the country it originates from, as well as
+          sectors and countries that have been targeted.
         </p>
-        <div style="width: 50%; margin-left: auto; margin-right: auto">
+        <h4>MITRE's STIX 2.1 Representation of ATT&CK Groups</h4>
+        <p>
+          The STIX standard developed by the OASIS Cyber Threat Intelligence
+          Technical Committee is a common language and serialization format used
+          to represent and exchange cyber threat intelligence (Jordan, Piazza &
+          Darley 2021)<sup>6</sup>. For programmatic utilization, MITRE provides access to
+          the ATT&CK knowledge base through STIX interfaces on their
+          GitHub<sup>7</sup>.
+        </p>
+        <p>
+          Figure 2 illustrates the set of STIX 2.1 object and relationship types
+          leveraged to define groups that altogether comprise the ATT&CK Groups
+          knowledge base. An “intrusion set” object (activity group or Group)
+          connects with “attack pattern” objects (techniques/sub-techniques),
+          “malware” objects (software), and “tool” objects (software).
+        </p>
+        <div style="width: 40%; margin-left:auto; margin-right: auto;">
           <img
-            src="{{ site.baseurl }}/assets/img/jcop_diagram.png"
-            alt="Overview of the JCOP pillars and their interplay."
+            src="{{ site.baseurl }}/assets/img/Activity_Group-basic.jpg"
+            alt="High-level STIX 2.1 representation of the Groups knowledge base."
             class="responsive-img"
           />
-          <p><b>Figure 2:</b> Pillars of JCOP project</p>
         </div>
         <p>
-          <b>A summary of JCOP</b> regarding drivers, scope, and objectives is
-          presented below:
-        </p>
-        <b>Drivers:</b>
-        <ul>
-          <li>
-            <b>EU's Cybersecurity Strategy</b><sup>1</sup> (adopted Dec. 2020)
-            focuses on collective resilience against cyber threats
-          </li>
-          <li>
-            <b>“Cyber Blueprint”</b><sup>2</sup> - European Commission
-            Recommendation on Coordinated Response to Large Scale Cybersecurity
-            Incidents and Crises
-          </li>
-          <li>
-            <b>EU CyCLONe</b><sup>3</sup> - Cyber Crisis Liaison Organisation
-            Network
-          </li>
-        </ul>
-        <b>Scope:</b>
-        <ul>
-          <li>
-            <b>
-              Design, develop and deliver a Joint Cybersecurity Operations
-              Platform (JCOP)
-            </b>
-            tailored to the needs of EU Member State authorities entrusted with
-            cybersecurity, providing a holistic cybersecurity operations
-            solution.
-          </li>
-        </ul>
-        <b>Aims:</b>
-        <ul>
-          <li>
-            Create <b>a model Southeast Europe Coordinated Response Cluster</b>,
-            encompassing authorities of Greece and Cyprus, with validation from
-            the Norwegian competent authority.
-          </li>
-          <li>
-            <b>Demonstrate</b> in practice the
-            <b> capacity- and coordination- building impact </b> of JCOP at the
-            <b>national</b> (between national JCOP instances) and the
-            <b>EU level</b> (between JCOP instances and EU cybersecurity bodies,
-            such as the CSIRTs network, CERT-EU, and ENISA).
-          </li>
-          <li>
-            Establish JCOP as a
-            <b>prototypical implementation of the “Cyber Blueprint”</b> and a
-            reference that can be applied to additional Member States.
-          </li>
-        </ul>
+          <b>Figure 2:</b> High-level STIX 2.1 representation of the Groups
+          knowledge base.
+        </p> 
+        <h3>
+          A Proposed Enhanced STIX 2.1 Representation for the ATT&CK Groups
+          Knowledge Base
+        </h3>
         <p>
-          Given the vision and the goals of the National Cyber Security Strategy
-          of Greece for the period 2020-2025 (Figure 1), it becomes apparent
-          that a European project like JCOP is not only facilitating part of
-          NCSA's mission as a means of collaboration with other European
-          countries, academia and research centres, but it also supports various
-          national strategic objectives. Thus, before even getting into further
-          analysis, it is self-evident that the potential
-          <b>
-            added value of participating to European projects is directly linked
-            with the mission and objectives of the Authority.
-          </b>
+          We introduce additional types of contextual information that enable us
+          to construct more intelligible queries and exploit the knowledge base
+          in a more granular manner. Our proposed enhancements rely on
+          information already part of the knowledge base but represented in a
+          semi-structured form. In particular, information from the descriptions
+          of activity groups, which in many cases, identify group motivations,
+          the countries they originate from, as well as sectors and countries
+          they have targeted. We extract the identified information and
+          represent it in a fully structured manner using a set of distinct STIX
+          2.1 objects. In particular, the “location” object type is utilized to
+          represent the suspected or confirmed country of origin of an activity
+          group as well as targeted countries and regions. The “identity” object
+          type is used to represent targeted sectors. Moreover, when feasible,
+          the STIX 2.1 “intrusion set” objects are enriched with primary and
+          secondary motivations (using the available primary and secondary
+          motivations properties of the intrusion set object type). Figure 3
+          depicts the enhanced STIX 2.1 representation of the Groups knowledge
+          base (version 9). We have made the entire enhanced Groups knowledge
+          base available on GitHub<sup>8</sup>.
+        </p>
+        <div style="width: 80%; margin-left:auto; margin-right: auto;">
+          <img
+            src="{{ site.baseurl }}/assets/img/Enhancing_ATTCK_Groups.jpg"
+            alt="Enhanced STIX 2.1 representation of the ATT&CK Groups knowledge base."
+            class="responsive-img"
+          />
+        </div>
+        <p>
+          <b>Figure 3:</b> Enhanced STIX 2.1 representation of the ATT&CK Groups knowledge base.
+        </p>
+        <h3>
+          Utilizing the Enhanced STIX 2.1 Groups Knowledge Base for Group
+          Filtering and Technique Prioritization
+        </h3>
+        <p>
+          This section demonstrates how to use the new types of contextual
+          information introduced in the enhanced STIX 2.1 representation of the
+          Groups knowledge base to filter activity groups of interest.
         </p>
         <p>
-          <b>Moving forward to a more specific benefits estimation</b>, we will
-          focus on the three pillars of JCOP's toolbox and the new equipment,
-          which was part of JCOP implementation, and demonstrate how they relate
-          to the Authority's mission and the national objectives.
-        </p>
-        <p><u>Cyber Threat Intelligence (CTI)</u><br /></p>
-        <p>
-          Cybersecurity Threat Intelligence (CTI) is an upcoming cybersecurity
-          area of interest as an answer to a complex and evolving threat
-          landscape and is inseparable from a National Authority's cybersecurity
-          strategic planning and security awareness policies. JCOP project
-          includes technical sessions regarding CTI sharing models (STIX &
-          MISP), tracking of tactical, operational and strategic intelligence
-          sources, both open source and proprietary, and finally implementation
-          and training on a widespread CTI platform.
+          It is out of the scope of our work to suggest specific data query- or
+          programming languages to interact with the knowledge base. However,
+          any programming language that can interact with JSON (JavaScript
+          Object Notation) should be sufficient. It is also important to remark
+          that the accuracy of the results retrieved might be questionable due
+          to the use of non-standardized vocabularies in providing context that
+          often leads to semantic ambiguity. For example, the number of sectors
+          and sectors considered critical infrastructure might be dissimilar in
+          different countries.
         </p>
         <p>
-          <u>Alerting & Incident Response (AIR)</u>
+          Listing 1 presents an SQL-based query that aims to retrieve activity
+          clusters that are believed to originate from the Russian Federation
+          and have targeted establishments within the Government sector in the
+          United States. The results indicate three activity groups to be of
+          relevance.
+        </p>
+        <div style="margin-left:auto; margin-right: auto;">
+          <table>
+            <tr>
+              <td style="border: 1px solid black;"> 
+                <code style="color: black">
+                  SELECT * FROM GroupsKnowledgeBase <br/>
+                  WHERE OriginatesFrom == “Russian Federation” <br/>
+                  AND TargetSector == “Government” <br/>
+                  AND TargetCountry == “United States” <br/>
+                  <br/>
+                  Results: APT28, APT29, Dragonfly 2.0
+                </code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          <b>Listing 1:</b> SQL query leveraging our model's contextual information types to retrieve activity groups of interest.
         </p>
         <p>
-          NIS cooperation groups, CyCLONe, ENISA and other international and
-          European collaboration groups, rely heavily on information sharing and
-          common approaches at incident response procedures.
-          <b>
-            Incident management optimization, through international/ European
-            collaborations is a critical national strategic objective.
-          </b>
-          JCOP project in order to develop a proper Alert & Incident Response
-          (AIR) toolbox, is analysing all the Standard Operating Procedures
-          (SOPs) regarding National authorities AIR ecosystem and it is an
-          opportunity to review and optimize relevant forms and communication
-          lines.
+          Awareness of the techniques and their frequency among relevant activity groups allows organizations to support decision-making to protect their assets. From that point, defenders can leverage the associated information for their use cases, such as prioritizing adversary techniques to conduct defense gap- or SOC (security operations center) maturity assessments. We retrieve the ATT&CK technique use of the groups and provide it as input to MITRE's ATT&CK Navigator<sub>9</sub> to identify and explore any commonalities. The technique overlap is presented in Figure 5. The light red color techniques do not overlap among the three groups. The red color techniques indicate use by two groups, and the dark red color techniques indicate use by all three groups. 
         </p>
-        <p><u>Cyber Security Operations training</u></p>
+        <img
+          src="{{ site.baseurl }}/assets/img/Heatmap-APT28_APT29_Dragonfly2.0.jpg"
+          alt="Heatmap showing commonalities in technique use among APT28, APT29, and Dragonfly 2.0."
+          class="responsive-img"
+        />
         <p>
-          Cybersecurity Operations training is not just an internal issue but is
-          also driven by the EU's Cybersecurity strategy and the Council's
-          recommendations for achieving collective resilience against cyber
-          threats (namely, the Coordinated Response to Large Scale Cybersecurity
-          Incidents and Crises).
-          <b>
-            To achieve the EU's guidelines, capacity building and security
-            awareness raising are elevated from local National Issues to global
-            international/ European collaboration fields.
-          </b>
-          JCOP as a Joint Cooperation Platform, defines specific training
-          scenarios and provides a useful collaborative training tool according
-          to EU's directions.
-        </p>
-        <p><u>State-of-the-art equipment</u></p>
-        <p>
-          Part of the JCOP project is the addition of new technical
-          infrastructure in National Authorities' premises to enhance their SOC
-          capabilities. After consultation among the involved parties a new
-          video wall control system with advanced management capabilities is
-          added to the Authority's Infrastructures together with proper hosting
-          equipment for the JCOP portal.
+          <b>Figure 5:</b> Heatmap showing commonalities in technique use among APT28, APT29, and Dragonfly 2.0.
         </p>
         <p>
-          The video wall control system is placed between the JCOP hosting and
-          administration systems (Server & Workstations) and the video wall TV
-          screens to provide the ability to manage incoming visual information
-          from JCOP instances/ dashboards and distribute them to any preferred
-          layout to the video wall.
+          You can read the full paper in the following url: 
+          <a href="https://papers.academic-conferences.org/index.php/eccws/article/view/349/381">https://papers.academic-conferences.org/index.php/eccws/article/view/349/381</a><br/>
+          For technical details please visit our GitHub repo for this project: 
+          <a href="https://github.com/fovea-research/SAG">https://github.com/fovea-research/SAG</a>
         </p>
-        <p>With the suggested addition, JCOP infrastructure will be able to:</p>
-        <ul>
-          <li>
-            <b>fully integrate</b> with the existing monitoring infrastructure
-            of the Authority,
-          </li>
-          <li>
-            provide to the Authority access to
-            <b>state-of-the-art equipment</b> for usage and further evaluation,
-          </li>
-          <li>
-            ensure the addition of JCOP instances to current monitoring and
-            evaluating activities, <b>from day-one of the deployment</b>.
-          </li>
-        </ul>
-        <p>
-          <b>
-            Summarizing the added value of the JCOP project at the National
-            Cyber Security Authority </b
-          >, it
-          <u>
-            is clear that European projects can be a key element for National
-            Authorities to achieve their mission and goals and they can actually
-            improve the effectiveness of their daily cybersecurity operations.
-          </u>
-        </p>
-
         <b>Resources</b>
         <ol>
           <li>
-            The Cybersecurity Strategy, European Commission, 2022 -
-            <a
-              href="https://digitalstrategy.ec.europa.eu/en/policies/cybersecurity-strategy"
-            >
-              https://digitalstrategy.ec.europa.eu/en/policies/cybersecurity-strategy</a
-            >
+            Brown, R. and Lee, R.M., (2021). 2021 SANS Cyber Threat Intelligence (CTI) Survey. In Tech. Rep. SANS Institute.
           </li>
           <li>
-            Document 32017H1584, Commission Recommendation (EU) 2017/1584 of 13
-            September 2017 on coordinated response to large-scale cybersecurity
-            incidents and crises -
-            <a href="https://eur-lex.europa.eu/eli/reco/2017/1584/oj"
-              >https://eur-lex.europa.eu/eli/reco/2017/1584/oj</a
-            >
+            Johnson, C., Badger, L., Waltermire, D., Snyder, J. and Skorupka, C., (2016). Guide to Cyber Threat Information Sharing. NIST special publi   cation, 800(150).
           </li>
           <li>
-            Article 14 of Document 52020PC0823, Proposal for a DIRECTIVE OF THE
-            EUROPEAN PARLIAMENT AND OF THE COUNCIL on measures for a high common
-            level of cybersecurity across the Union, repealing Directive (EU)
-            2016/1148 -
-            <a
-              href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020PC0823&qid=1610720363291"
-              >https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020PC0823&qid=1610720363291</a
-            >
+            Bianco, D., (2019). The Pyramid of Pain (2014). Available at: http://detect-respond.blogspot.nl/2013/03/the-pyramid-of-pain.html. 
+          </li>
+          <li>
+            Lee, R.M., and Brown, R., (2021). FOR578 Cyber Threat Intelligence: 578.1 Cyber Threat Intelligence and Requirements. SANS.
+          </li>
+          <li>
+            <a href="https://attack.mitre.org/groups/">https://attack.mitre.org/groups/</a>
+          </li>
+          <li>
+            Jordan, B., Piazza, R., and Darley T., (2021), July, STIX™ Standard, version2.1  ed., [Online]  https://docs.oasis-open.org/cti/stix/v2.1/stix-v2.1.html, OASIS Cyber Threat Intelligence Technical  Committee.
+          </li>
+          <li>
+            <a href="https://github.com/mitre-attack/attack-stix-data">https://github.com/mitre-attack/attack-stix-data</a> 
+          </li>
+          <li>
+            <a href="https://github.com/fovea-research/SAG">https://github.com/fovea-research/SAG</a>
+          </li>
+          <li>
+            <a href=" https://mitre-attack.github.io/attack-navigator/"> https://mitre-attack.github.io/attack-navigator/</a>
           </li>
         </ol>
       </div>
