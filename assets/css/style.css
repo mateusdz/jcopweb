@@ -974,3 +974,9 @@ section {
 .contacts .icon-box:hover h4 a {
   color: #3498db;
 }
+
+.jumbotron {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
