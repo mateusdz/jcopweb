@@ -985,3 +985,8 @@ section {
 .margin-right-10 {
   margin-right: 10px;
 }
+
+.zenodo-img {
+  height: 48px;
+  margin-bottom: 10px;
+}
