@@ -14,7 +14,7 @@ permalink: /blogposts/blog4.html
       </div>
       <div class="col-sm-12">
         <p>
-          The goal of the Action is to create a Joint Cybersecurity Operations Platform (JCOP) that is specifically designed to enhance the cyber capabilities of the EU Member State authorities, by providing assets regarding (i) Cyber Threat Intelligence (CTI), (ii) Incident Response and (iii) Cybersecurity Operations Training (COT). In addition, the Action's success will be determined by cross-border cooperation activities for cyber defense enhancement which is considered crucial for building trust among the Member States. Finally, the platform that will be delivered must encapsulate terms such as shared situational awareness, joint preparedness and coordinated incident response.
+          The goal of the Action is to create a Joint Cybersecurity Operations Platform (JCOP) that is specifically designed to enhance the cyber capabilities of the EU Member State authorities, by providing assets regarding (i) Cyber Threat Intelligence (CTI), (ii) Incident Response and (iii) Cybersecurity Operations Training (COT). In addition, the Action's positive impact will be enhanced by extensive cross-border cooperation activities for cyber defense competence augmentation, which is essential for strengthening trust among the Member States. The delivered platform will promote and integrate concepts such as shared situational awareness, joint preparedness and coordinated incident response.
         </p>
         <div style="width: 60%; margin-left:auto; margin-right: auto;">
           <img
@@ -26,10 +26,10 @@ permalink: /blogposts/blog4.html
         <p><b>Figure 1:</b> Outline of the JCOP pillars</p>
         <h3>Technical University of Crete - Management</h3>
         <p>
-          TUC is the project coordinator of JCOP and is responsible for the successful implementation of the Action, which translates into administration, monitoring, and quality assurance. More specifically, the activity that TUC leads refers to project management reporting, cost claim preparation, administrative checks, as well as providing a clear vision for the project’s goals and overall requirements. In close coordination with the European Commission (EC) and the European Health and Digital Executive Agency (HaDEA), TUC has to submit all required documentation, including financial statements. In detail, reports are submitted to HaDEA on a semi-annual frequency regarding the status of the progress of all activities. In case of deviations from the work plan, the coordinator has to take immediate action, in a responsible manner, to repel emerging problems and risks. Last but not least, TUC was also the organizer of the kick-off meeting that took place in August 2021 and four plenary meetings, in November 2021, January 2022, July 2022 (physical in Cyprus), and October 2022 (physical in Greece, Chania). The fifth plenary meeting is scheduled to take place in February 2023 in Athens, Greece.
+          TUC is the project coordinator of JCOP and as such it is responsible for the successful implementation of the Action, which translates into tasks including: administration, monitoring, and quality assurance. In particular, the activity that TUC leads is constituted by project management reporting, cost claim preparation, administrative checks, as well as providing a clear vision for the project's goals and overall requirements. In close coordination with the European Commission (EC) and the European Health and Digital Executive Agency (HaDEA), TUC is obliged to submit all required documentation, including financial statements. Regarding the status of the progress of all activities, reports are submitted to HaDEA on a semi-annual basis. In case of detecting deviations from the work plan, the coordinator must take preemptive, or immediate action in a responsible manner, to subdue emerging problems and risks. Last but not least, TUC was the organizer of the kick-off meeting that took place in August 2021, in addition to six plenary meetings: (1) November 2021, (2) January 2022, (3) July 2022 (all physical in Cyprus), and (4) October 2022 (physical in Greece, Chania), (5) February 2023 (physical in Greece, Athens) and (6) June 2023 (physical in Norway, Oslo).
         </p>
         <p>
-          In addition to management, monitoring, quality assurance, and reporting, TUC is in charge of defining the Architecture of the platform, Key Performance Indicators (KPIs), and requirements of the Action. The architecture refers to the platform interfaces and functionalities of the core modules. Specific requirements and the architecture have already been defined, with the input of the authorities, who provided expertise to the requirements specification from an end-user perspective, and the contribution of the rest of the consortium for the specification of the requirements collection methodology, the technical requirements, the KPIs and the architecture itself.
+          In addition to management, monitoring, quality assurance, and reporting, TUC is in charge of defining the Architecture of the platform, Key Performance Indicators (KPIs), and requirements of the Action. The architecture refers to the platform interfaces and functionalities of the core modules. Specific requirements concerning the architecture and the core modules have already been defined, incorporating input from the authorities, who provided expertise through formulating requirements specification from an end-user perspective. This was enriched with further input from the rest of the consortium regarding the specification of the requirements collection methodology, the technical requirements, the KPIs, and the architecture itself. 
         </p>
         <p>The overall methodology was defined following the steps below, in sequential order:</p>
         <ol>
@@ -45,10 +45,13 @@ permalink: /blogposts/blog4.html
         </p>
         <h3>Technical Contributions</h3>
         <p>
-          On the technical side of the project, JCOP will offer a platform consisting of multiple cybersecurity-oriented components. TUC has directly provided contributions to the technical task of JCOP, and specifically: HoneyChart and GNORT. These tools are some of the locally deployed Cyber Threat Intelligence (CTI) assets of JCOP, and their main functionality is alerting/logging relevant information in the case of some type of intrusion to the host. Both of these types of software have been effective over the years and are deployed in order to protect information systems that can be vulnerable to intrusion attacks. In the case of JCOP, it is imperative that the platform utilizes such tools to proactively fend off attacks by parsing alerts/logs through the rest of the platform's components. In detail:
+          On the technical side of the project, JCOP will offer a platform consisting of multiple cybersecurity-oriented components. TUC has directly provided contributions to the technical task of JCOP, specifically: HoneyChart and GNORT. These tools are part of the locally deployed Cyber Threat Intelligence (CTI) assets of JCOP, and their main functionality is alerting/logging relevant information supporting preemptive steps such as blacklisting and monitoring. Such data can also be correlated with other threat  indicators, serving as an important component for intrusion prevention or intrusion detection to secure the host. Such protection and prevention mechanisms have been effective over the years and are actively deployed in order to protect information systems that can be vulnerable to intrusion attacks. In the case of JCOP, it is imperative that the platform utilizes such tools to proactively fend off attacks by parsing alerts/logs through the rest of the platform's components. 
+        </p>
+        <p>
+          The following paragraphs describe the tools developed by TUC:
         </p>
         <ul>
-          <li>HoneyChart<sup>2</sup>: a platform dedicated to creating and deploying honeypots utilizing HelmCharts and Kubernetes. Honeypots are a special type of software that lure and capture attackers. All traffic directed to a Honeypot service is considered malicious, since it should not exist in the first place. Honeypots usually take the form of websites, but they can also be files, e-mails and databases. Initially their goal was to detect worms, which blindly attack the whole address space, but since worm attacks have dissipated over the years, Honeypots are now used to detect worm-able attacks, like BlueKeep<sup>3</sup>, or provide useful insights for protecting Industrial Control Systems (ICS) and their supervisory control and data acquisition (SCADA) components. In the tool adopted by JCOP, a web interface for generating Helm Charts of containerized honeypots is presented (Figure 2). The front-end part was created using HTML, CSS, Javascript, and the back-end with Node.js. HoneyChart provides a selection of low and high interaction honeypots, as well as the ability to create either custom honeypots or honeypots based on pre-built templates, exposing specific interfaces. The containerized images that are provided are the Dionaea, Conpot and Cowrie honeypots.</li>
+          <li>HoneyChart<sup>2</sup>: a platform dedicated to the creation and the deployment of honeypots utilizing HelmCharts and Kubernetes. Honeypots are a special type of software that can lure and lead astray attackers, thereby revealing their presence and tactics. All traffic directed to a Honeypot service is considered malicious, since such traffic can not originate from legitimate users. Honeypots usually take the form of websites, but they can also be files, e-mails and databases, or other services sitting on open ports. Initially their goal was to detect worms, which blindly attack the whole address space, but since worm attacks have dissipated over the years, Honeypots are now used to detect worm-able attacks, like BlueKeep<sup>3</sup>, or provide useful insights for protecting Industrial Control Systems (ICS) and their supervisory control and data acquisition (SCADA) components. In the tool adopted by JCOP, a web interface for generating Helm Charts of containerized honeypots is presented (Figure 2). The front-end part was created using HTML, CSS, Javascript, and the back-end with Node.js. HoneyChart provides a selection of low and high interaction honeypots. Its users are provided with two main options, the ability to create (a) custom honeypots and (b) honeypots based on pre-built templates, exposing specific interfaces. Regarding the first option the honeypot images that are provided are the Dionaea, Conpot and Cowrie honeypot. The users can create custom Helm Charts and configure the selected honeypot images based on their requirements and preferences. As to the second option, the users are allowed to select pre-built Helm Charts that can simulate different protocols, e.g. the Microsoft Windows protocols.</li>
         </ul>
 
         <div style="width: 60%; margin-left:auto; margin-right: auto;">
@@ -63,14 +66,14 @@ permalink: /blogposts/blog4.html
         <div style="width: 60%; margin-left:auto; margin-right: auto;">
           <img
           src="{{ site.baseurl }}/assets/img/blog4-figure3.png"
-          alt="Honeypots’ generation process in HoneyChart."
+          alt="Honeypots' generation process in HoneyChart."
           class="responsive-img"
           />
         </div>
         <p><b>Figure 3:</b> Honeypots' generation process in HoneyChart.</p>
 
         <ul>
-          <li>GNORT: GPU accelerated Snort, which is an intrusion detection system (IDS). Snort<sup>4</sup> is an open-source tool that, based on configurations and rulesets, detects intrusions by packet inspection and payload analysis. Typically an IDS is set as a switch (Figure 4), between the host(s) and incoming packet traffic. Snort also provides a mode that can be set as an intrusion prevention system (IPS), which then directly controls the packet traffic, rather than simply making observations and alerts. It can be very easily configured by specifying certain rules that dictate ports or IP addresses, that the user wants to be alerted, certain string patterns that may appear in the payload section of a packet, and many more functionalities. Since it is an open-source tool, there are plenty of community-created rules available. More specifically, TUC provides the combination of Snort with a Deep Packet Inspection (DPI) tool<sup>5</sup> (Figure 5), which implements a pattern-matching algorithm for string searching, that is executed using GPU resources for parallel and faster computation. The GPU porting of the matching algorithm is written in OpenCL language.</li>
+          <li>GPU accelerated Snort, which is an intrusion detection system (IDS). Snor<sup>4</sup> is an open-source tool that can detect intrusions by packet inspection and payload analysis, based on preconfigured rulesets. Typically an IDS is placed as a switch (Figure 4), between the host(s) and incoming packet traffic. Snort also provides a mode that can be set as an intrusion prevention system (IPS), which then directly controls the packet traffic, rather than simply making observations and alerts. It can be very easily configured by specifying certain rules that overwatch ports or IP addresses which the user wants to be alerted about, by detecting certain string patterns that may appear in the payload section of a packet, and many more functionalities. Since it is an open-source tool, there are plenty of community-created rules available. As an additional contribution, TUC provides an enhancement to Snort with a Deep Packet Inspection (DPI) tool<sup>5</sup> (Figure 5), which transfers the packets to the GPU, implements the Aho-Corasick multi-pattern matching algorithm for string searching on the GPU and transfers the results back to the CPU. By using GPU resources it achieves parallel and faster computation. The GPU porting of the matching algorithm is written in OpenCL language.</li>
         </ul>
 
         <div style="width: 60%; margin-left:auto; margin-right: auto;">
@@ -80,7 +83,7 @@ permalink: /blogposts/blog4.html
           class="responsive-img"
           />
         </div>
-        <p><b>Figure 4:</b> Typical Snort deployment.</p>
+        <b>Figure 4:</b> Typical Snort deployment. SNORT as an IDS system performs: monitoring and detection, analyze traffic, alerts and notifications, aiding post incident investigation through logging</p>
 
         <div style="width: 60%; margin-left:auto; margin-right: auto;">
           <img
@@ -89,8 +92,8 @@ permalink: /blogposts/blog4.html
           class="responsive-img"
           />
         </div>
-        <p><b>Figure 5:</b> Deterministic Finite Automaton.</p>
-
+        <p><b>Figure 5:</b> Deterministic Finite Automaton. Depicts how Snort processes information, complemented with the GPU enhanced string searching algorithm. Note, that does not aim to change, but to enhance the way Snort operates.
+          </p>
 
         <p>
           You can read the full paper in the following url: 
@@ -104,9 +107,9 @@ permalink: /blogposts/blog4.html
         <ol>
           <li>Commission Recommendation (EU) 2017/1584 of 13 September 2017 on coordinated response to large-scale cybersecurity incidents and crises, <a href="https://eur-lex.europa.eu/eli/reco/2017/1584/oj">https://eur-lex.europa.eu/eli/reco/2017/1584/oj</a></li>
           <li>HoneyChart: Automated Honeypot Management Over Kubernetes, 3rd International Workshop on Cyber-Physical Security for Critical Infrastructures Protection (CPS4CIP 2022)</li>
-          <li>The much-publicized BlueKeep threat has finally emerged – why should you care?, <a href="https://blog.avast.com/what-is-bluekeep">https://blog.avast.com/what-is-bluekeep</a></li>
+          <li>The much-publicized BlueKeep threat has finally emerged - why should you care? Available at: <a href="https://blog.avast.com/what-is-bluekeep">https://blog.avast.com/what-is-bluekeep</a></li>
           <li>https://www.snort.org/</li>
-          <li>G. Giakoumakis, E. Papadogiannaki, G. Vasiliadis and S. Ioannidis, "Pythia: Scheduling of Concurrent Network Packet Processing Applications on Heterogeneous Devices," 2020 6th IEEE Conference on Network Softwarization (NetSoft), 2020, pp. 145-149, doi: 10.1109/NetSoft48620.2020.9165447.</li>
+          <li>G. Giakoumakis, E. Papadogiannaki, G. Vasiliadis and S. Ioannidis, "Pythia: Scheduling of Concurrent Network Packet Processing Applications on Heterogeneous Devices," 2020 6th IEEE Conference on Network Softwarization (NetSoft), 2020, pp. 145-149, doi: <a href="https://ieeexplore.ieee.org/document/9165447">10.1109/NetSoft48620.2020.9165447</a>.</li>
         </ol>
       </div>
     </div>
